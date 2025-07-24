@@ -1,0 +1,53 @@
+import 'package:flutter/material.dart';
+import 'package:mydoc_mainscroll/pages/my_doctor/my_doctor_page.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp();
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      routes: {
+        '/myDoctor': (context) => const MyDoctorPage(),
+      },
+      debugShowCheckedModeBanner: false,
+      home: NaviPage(),
+    );
+  }
+}
+
+class NaviPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: Padding(
+        padding: EdgeInsetsGeometry.all(16),
+        child: GridView.count(
+          crossAxisCount: 5,
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.white,
+              ),
+              child: AspectRatio(
+                aspectRatio: 1 / 1,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/myDoctor');
+                  },
+                  child: Center(child: Text("나만의닥터")),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
