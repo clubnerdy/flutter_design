@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mydoc_mainscroll/pages/kkaebiz/kkaebiz_page.dart';
 import 'package:mydoc_mainscroll/pages/my_doctor/my_doctor_page.dart';
 
 void main() {
@@ -13,6 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       routes: {
         '/myDoctor': (context) => const MyDoctorPage(),
+        '/kkaebiz': (context) => const KkaebizPage(),
       },
       debugShowCheckedModeBanner: false,
       home: NaviPage(),
@@ -29,10 +31,11 @@ class NaviPage extends StatelessWidget {
         padding: EdgeInsetsGeometry.all(16),
         child: GridView.count(
           crossAxisCount: 5,
+          crossAxisSpacing: 16,
           children: [
             Container(
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(16),
                 color: Colors.white,
               ),
               child: AspectRatio(
@@ -42,6 +45,21 @@ class NaviPage extends StatelessWidget {
                     Navigator.pushNamed(context, '/myDoctor');
                   },
                   child: Center(child: Text("나만의닥터")),
+                ),
+              ),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.white,
+              ),
+              child: AspectRatio(
+                aspectRatio: 1 / 1,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/kkaebiz');
+                  },
+                  child: Center(child: Text("깨비즈")),
                 ),
               ),
             ),
