@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mydoc_mainscroll/pages/dummy/dummy.dart';
 import 'package:mydoc_mainscroll/pages/kkaebiz/kkaebiz_page.dart';
 import 'package:mydoc_mainscroll/pages/my_doctor/my_doctor_page.dart';
 
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/myDoctor': (context) => const MyDoctorPage(),
         '/kkaebiz': (context) => const KkaebizPage(),
+        '/test': (context) => const DummyPage(),
       },
       debugShowCheckedModeBanner: false,
       home: NaviPage(),
@@ -60,6 +62,21 @@ class NaviPage extends StatelessWidget {
                     Navigator.pushNamed(context, '/kkaebiz');
                   },
                   child: Center(child: Text("깨비즈")),
+                ),
+              ),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.white,
+              ),
+              child: AspectRatio(
+                aspectRatio: 1 / 1,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/test');
+                  },
+                  child: Center(child: Text("테스트")),
                 ),
               ),
             ),
