@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mydoc_mainscroll/pages/dummy/dummy.dart';
+import 'package:mydoc_mainscroll/pages/dummy/dummy_page.dart';
 import 'package:mydoc_mainscroll/pages/kkaebiz/kkaebiz_page.dart';
 import 'package:mydoc_mainscroll/pages/my_doctor/my_doctor_page.dart';
 
