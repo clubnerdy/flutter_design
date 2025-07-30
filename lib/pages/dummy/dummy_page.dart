@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class DummyPage extends StatelessWidget {
   const DummyPage({super.key});
@@ -7,12 +6,44 @@ class DummyPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Google Map 테스트")),
-      body: GoogleMap(
-        initialCameraPosition: CameraPosition(
-          target: LatLng(37.4979, 127.0276), // 강남역 좌표
-          zoom: 15,
-        ),
+      appBar: AppBar(title: Text("Liquid Glass 테스트")),
+      body: Stack(
+        children: [
+          Row(
+            children: [
+              Container(
+                width: 100,
+                height: 100,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50),
+                  color: Colors.blue,
+                ),
+              ),
+              Container(
+                width: 100,
+                height: 100,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50),
+                  color: Colors.blue,
+                ),
+              ),
+              Container(
+                width: 100,
+                height: 100,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50),
+                  color: Colors.blue,
+                ),
+              ),
+            ],
+          ),
+          // LiquidGlass(
+          //   child: Text('data'),
+          //   shape: LiquidRoundedRectangle(
+          //     borderRadius: Radius.circular(16),
+          //   ),
+          // ),
+        ],
       ),
     );
   }
