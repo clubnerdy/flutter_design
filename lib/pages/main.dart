@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mydoc_mainscroll/pages/bungeoppang/bungeoppang_page.dart';
-import 'package:mydoc_mainscroll/pages/dummy/dummy_page.dart';
-import 'package:mydoc_mainscroll/pages/kkaebiz/kkaebiz_page.dart';
-import 'package:mydoc_mainscroll/pages/my_doctor/my_doctor_page.dart';
+import 'package:flutter_design/pages/bungeoppang/bungeoppang_page.dart';
+import 'package:flutter_design/pages/dummy/dummy_page.dart';
+import 'package:flutter_design/pages/kkaebiz/kkaebiz_page.dart';
+import 'package:flutter_design/pages/my_doctor/my_doctor_page.dart';
 
 void main() {
   runApp(const MyApp());

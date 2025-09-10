@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mydoc_mainscroll/pages/my_doctor/widget/medical_nav/medical_nav_item.dart';
+import 'package:flutter_design/pages/my_doctor/widget/medical_nav/medical_nav_item.dart';
 
 class MedicalNavList extends StatelessWidget {
   const MedicalNavList({

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mydoc_mainscroll/pages/kkaebiz/widget/kkaebiz_bottom_btn.dart';
-import 'package:mydoc_mainscroll/pages/kkaebiz/widget/kkaebiz_character.dart';
-import 'package:mydoc_mainscroll/pages/kkaebiz/widget/kkaebiz_comment_box.dart';
-import 'package:mydoc_mainscroll/pages/kkaebiz/widget/kkaebiz_picker.dart';
-import 'package:mydoc_mainscroll/pages/kkaebiz/widget/kkaebiz_slider.dart';
+import 'package:flutter_design/pages/kkaebiz/widget/kkaebiz_bottom_btn.dart';
+import 'package:flutter_design/pages/kkaebiz/widget/kkaebiz_character.dart';
+import 'package:flutter_design/pages/kkaebiz/widget/kkaebiz_comment_box.dart';
+import 'package:flutter_design/pages/kkaebiz/widget/kkaebiz_picker.dart';
+import 'package:flutter_design/pages/kkaebiz/widget/kkaebiz_slider.dart';
 
 class KkaebizBody extends StatelessWidget {
   const KkaebizBody({

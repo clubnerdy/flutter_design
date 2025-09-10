@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mydoc_mainscroll/pages/my_doctor/widget/Quiz/quiz_point.dart';
-import 'package:mydoc_mainscroll/pages/my_doctor/widget/footer.dart';
-import 'package:mydoc_mainscroll/pages/my_doctor/widget/medical_nav/medical_nav.dart';
-import 'package:mydoc_mainscroll/pages/my_doctor/widget/quick_nav.dart';
-import 'package:mydoc_mainscroll/pages/my_doctor/widget/slide_banner.dart';
+import 'package:flutter_design/pages/my_doctor/widget/Quiz/quiz_point.dart';
+import 'package:flutter_design/pages/my_doctor/widget/footer.dart';
+import 'package:flutter_design/pages/my_doctor/widget/medical_nav/medical_nav.dart';
+import 'package:flutter_design/pages/my_doctor/widget/quick_nav.dart';
+import 'package:flutter_design/pages/my_doctor/widget/slide_banner.dart';
 
 class MyDoctorBody extends StatelessWidget {
   const MyDoctorBody({

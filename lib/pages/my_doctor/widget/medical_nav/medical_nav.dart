@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mydoc_mainscroll/pages/my_doctor/widget/medical_nav/medical_nav_btn.dart';
-import 'package:mydoc_mainscroll/pages/my_doctor/widget/medical_nav/medical_nav_list.dart';
-import 'package:mydoc_mainscroll/pages/my_doctor/widget/medical_nav/medical_nav_tab.dart';
+import 'package:flutter_design/pages/my_doctor/widget/medical_nav/medical_nav_btn.dart';
+import 'package:flutter_design/pages/my_doctor/widget/medical_nav/medical_nav_list.dart';
+import 'package:flutter_design/pages/my_doctor/widget/medical_nav/medical_nav_tab.dart';
 
 class MedicalNav extends StatelessWidget {
   const MedicalNav({
