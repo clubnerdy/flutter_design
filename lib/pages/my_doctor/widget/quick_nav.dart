@@ -20,15 +20,15 @@ class QuickNav extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 72,
-                  child: Image.asset("assets/location_1.png"),
+                  width: 48,
+                  child: Image.asset("assets/mydoc/location_1.png"),
                 ),
                 SizedBox(height: 16),
                 Text(
                   "약국 찾기",
                   style: TextStyle(
                     color: Color(0xFF444444),
-                    fontSize: 18,
+                    fontSize: 16,
                     fontWeight: FontWeight.w700,
                   ),
                 ),
@@ -36,7 +36,7 @@ class QuickNav extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(width: 8),
+        SizedBox(width: 12),
         Expanded(
           child: Container(
             height: 160,
@@ -48,15 +48,15 @@ class QuickNav extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 64,
-                  child: Image.asset("assets/baby.png"),
+                  width: 48,
+                  child: Image.asset("assets/mydoc/baby.png"),
                 ),
                 SizedBox(height: 16),
                 Text(
                   "우리 아이\n건강 기록",
                   style: TextStyle(
                     color: Color(0xFF444444),
-                    fontSize: 18,
+                    fontSize: 16,
                     fontWeight: FontWeight.w700,
                   ),
                 ),
@@ -64,7 +64,7 @@ class QuickNav extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(width: 8),
+        SizedBox(width: 12),
         Expanded(
           child: Container(
             height: 160,
@@ -76,15 +76,15 @@ class QuickNav extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 60,
-                  child: Image.asset("assets/coin.png"),
+                  width: 48,
+                  child: Image.asset("assets/mydoc/coin.png"),
                 ),
                 SizedBox(height: 16),
                 Text(
                   "리워드 1등\n만보기",
                   style: TextStyle(
                     color: Color(0xFF444444),
-                    fontSize: 18,
+                    fontSize: 16,
                     fontWeight: FontWeight.w700,
                   ),
                   textAlign: TextAlign.center,
