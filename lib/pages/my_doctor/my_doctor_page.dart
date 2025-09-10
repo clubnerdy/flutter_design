@@ -69,8 +69,8 @@ class MyDoctorPage extends StatelessWidget {
   AppBar _appbar() {
     return AppBar(
       title: Image.asset(
-        'assets/mydoc_logo.png',
-        width: 120,
+        'assets/mydoc/mydoc_logo.png',
+        width: 100,
       ),
       actions: commonList,
       backgroundColor: Color(0xFFEAEBEF),

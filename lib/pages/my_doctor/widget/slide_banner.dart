@@ -35,15 +35,15 @@ class SlideBanner extends StatelessWidget {
                       "365일 24시간 약국을 찾고 싶을 때",
                       style: TextStyle(
                         color: Color(0xFF4483FE),
-                        fontSize: 16,
+                        fontSize: 14,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
                   ],
                 ),
                 Container(
-                  width: 64,
-                  child: Image.asset("assets/map_1.png"),
+                  width: 48,
+                  child: Image.asset("assets/mydoc/map_1.png"),
                 ),
               ],
             ),

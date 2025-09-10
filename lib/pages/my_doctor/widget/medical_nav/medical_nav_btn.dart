@@ -21,7 +21,7 @@ class MedicalNavBtn extends StatelessWidget {
         child: InkWell(
           onTap: () {},
           child: Padding(
-            padding: const EdgeInsets.only(top: 30, bottom: 12),
+            padding: const EdgeInsets.only(top: 24, bottom: 8),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,

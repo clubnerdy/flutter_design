@@ -16,9 +16,9 @@ class MedicalNavItem extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          height: 80,
+          height: 54,
           child: Image.asset(
-            'assets/$img',
+            'assets/mydoc/$img',
             fit: BoxFit.cover,
           ),
         ),
