@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mydoc_mainscroll/pages/my_doctor/widget/Quiz/quiz_description.dart';
-import 'package:mydoc_mainscroll/pages/my_doctor/widget/Quiz/quiz_point_btns.dart';
-import 'package:mydoc_mainscroll/pages/my_doctor/widget/Quiz/quiz_title.dart';
+import 'package:flutter_design/pages/my_doctor/widget/Quiz/quiz_description.dart';
+import 'package:flutter_design/pages/my_doctor/widget/Quiz/quiz_point_btns.dart';
+import 'package:flutter_design/pages/my_doctor/widget/Quiz/quiz_title.dart';
 
 class QuizPoint extends StatelessWidget {
   const QuizPoint({

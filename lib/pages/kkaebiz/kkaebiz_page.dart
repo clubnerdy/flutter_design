@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mydoc_mainscroll/pages/kkaebiz/widget/kkaebiz_body.dart';
+import 'package:flutter_design/pages/kkaebiz/widget/kkaebiz_body.dart';
 
 class KkaebizPage extends StatefulWidget {
   const KkaebizPage({super.key});
