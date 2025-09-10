@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mydoc_mainscroll/pages/kkaebiz/widget/pickers.dart';
+import 'package:flutter_design/pages/kkaebiz/widget/pickers.dart';
 
 class KkaebizPicker extends StatefulWidget {
   const KkaebizPicker({super.key});

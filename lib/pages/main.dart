@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mydoc_mainscroll/pages/dummy/dummy.dart';
-import 'package:mydoc_mainscroll/pages/kkaebiz/kkaebiz_page.dart';
-import 'package:mydoc_mainscroll/pages/my_doctor/my_doctor_page.dart';
+import 'package:flutter_design/pages/bungeoppang/bungeoppang_page.dart';
+import 'package:flutter_design/pages/dummy/dummy_page.dart';
+import 'package:flutter_design/pages/kkaebiz/kkaebiz_page.dart';
+import 'package:flutter_design/pages/my_doctor/my_doctor_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/myDoctor': (context) => const MyDoctorPage(),
         '/kkaebiz': (context) => const KkaebizPage(),
+        '/bungeo': (context) => const BungeoppangPage(),
         '/test': (context) => const DummyPage(),
       },
       debugShowCheckedModeBanner: false,
@@ -62,6 +64,21 @@ class NaviPage extends StatelessWidget {
                     Navigator.pushNamed(context, '/kkaebiz');
                   },
                   child: Center(child: Text("깨비즈")),
+                ),
+              ),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.white,
+              ),
+              child: AspectRatio(
+                aspectRatio: 1 / 1,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/bungeo');
+                  },
+                  child: Center(child: Text("가슴 속 삼천원")),
                 ),
               ),
             ),

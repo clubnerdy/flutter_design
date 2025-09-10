@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:mydoc_mainscroll/pages/my_doctor/widget/my_doctor_body.dart';
-import 'package:mydoc_mainscroll/pages/my_doctor/widget/public/actionsList.dart';
+import 'package:flutter_design/pages/my_doctor/widget/my_doctor_body.dart';
+import 'package:flutter_design/pages/my_doctor/widget/public/actionsList.dart';
 
 class MyDoctorPage extends StatelessWidget {
   const MyDoctorPage({super.key});
