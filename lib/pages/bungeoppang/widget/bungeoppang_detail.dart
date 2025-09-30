@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_design/pages/bungeoppang/widget/bungeoppang_detail_view.dart';
 import 'package:flutter_design/pages/bungeoppang/widget/bungeoppang_salt.dart';
 import 'package:flutter_design/pages/bungeoppang/widget/bungeoppang_social.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BungeoppangDetail extends StatelessWidget {
   const BungeoppangDetail({
