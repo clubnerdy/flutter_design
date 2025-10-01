@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_design/pages/bungeoppang/widget/bungeoppang_detail_box.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BungeoppangDetailView extends StatelessWidget {
   const BungeoppangDetailView({
@@ -13,8 +12,8 @@ class BungeoppangDetailView extends StatelessWidget {
       height: 180,
       child: CarouselView(
         itemExtent: 340,
-        shrinkExtent: 330,
-        padding: EdgeInsets.all(0),
+        shrinkExtent: 340,
+        padding: EdgeInsets.symmetric(horizontal: 10),
         children: [
           BungeoppangDetailBox(
             tag: '붕어빵',
