@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_design/pages/nhr_talk/widget/nhr_carousel.dart';
+import 'package:flutter_design/pages/nhr_talk/widget/nhr_contents.dart';
+import 'package:flutter_design/pages/nhr_talk/widget/nhr_sliver_header.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class NhrPage extends StatelessWidget {
@@ -7,14 +10,12 @@ class NhrPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Container(
-              height: 200,
-              child: Placeholder(),
-            ),
-            CustomScrollView(),
+      body: SafeArea(
+        child: CustomScrollView(
+          slivers: [
+            NhrCarousel(),
+            NhrSliverHeader(),
+            NhrContents(),
           ],
         ),
       ),
@@ -33,10 +34,13 @@ class _BottomNavigationBar extends StatelessWidget {
     return BottomNavigationBar(
       currentIndex: 0,
       selectedItemColor: Color(0xFF000000),
-      unselectedItemColor: Color(0xFF000000),
+      unselectedItemColor: Color(0xFF808080),
+      selectedFontSize: 12,
+      unselectedFontSize: 12,
       showSelectedLabels: true,
       showUnselectedLabels: true,
       type: BottomNavigationBarType.fixed,
+      backgroundColor: Color(0xB3F3F3F3),
       onTap: (_) {},
       items: [
         BottomNavigationBarItem(
