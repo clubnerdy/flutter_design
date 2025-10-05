@@ -32,87 +32,174 @@ class NaviPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color(0xFFE1E1E1),
       body: Padding(
         padding: EdgeInsetsGeometry.all(16),
         child: GridView.count(
           crossAxisCount: 5,
           crossAxisSpacing: 16,
+          mainAxisSpacing: 16,
+          childAspectRatio: 0.6,
           children: [
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(16),
-                color: Colors.white,
-              ),
-              child: AspectRatio(
-                aspectRatio: 1 / 1,
-                child: InkWell(
-                  onTap: () {
-                    Navigator.pushNamed(context, '/myDoctor');
-                  },
-                  child: Center(child: Text("나만의닥터")),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              spacing: 4,
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    color: Colors.white,
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(16),
+                    child: AspectRatio(
+                      aspectRatio: 1 / 1,
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/myDoctor');
+                        },
+                        child: Image.asset(
+                          'assets/app-icon.png',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
-              ),
+                Text(
+                  '나만의닥터',
+                  style: TextStyle(fontSize: 12),
+                ),
+              ],
             ),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: Colors.white,
-              ),
-              child: AspectRatio(
-                aspectRatio: 1 / 1,
-                child: InkWell(
-                  onTap: () {
-                    Navigator.pushNamed(context, '/kkaebiz');
-                  },
-                  child: Center(child: Text("깨비즈")),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              spacing: 4,
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    color: Colors.white,
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(16),
+                    child: AspectRatio(
+                      aspectRatio: 1 / 1,
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/kkaebiz');
+                        },
+                        child: Image.asset(
+                          'assets/app-icon.png',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
-              ),
+                Text(
+                  '깨비즈',
+                  style: TextStyle(fontSize: 12),
+                ),
+              ],
             ),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: Colors.white,
-              ),
-              child: AspectRatio(
-                aspectRatio: 1 / 1,
-                child: InkWell(
-                  onTap: () {
-                    Navigator.pushNamed(context, '/bungeo');
-                  },
-                  child: Center(child: Text("가슴 속 삼천원")),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              spacing: 4,
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    color: Colors.white,
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(16),
+                    child: AspectRatio(
+                      aspectRatio: 1 / 1,
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/bungeo');
+                        },
+                        child: Image.asset(
+                          'assets/app-icon.png',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
-              ),
+                Text(
+                  '붕어빵',
+                  style: TextStyle(fontSize: 12),
+                ),
+              ],
             ),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: Colors.white,
-              ),
-              child: AspectRatio(
-                aspectRatio: 1 / 1,
-                child: InkWell(
-                  onTap: () {
-                    Navigator.pushNamed(context, '/nhrtalk');
-                  },
-                  child: Center(child: Text("커리어 톡")),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              spacing: 4,
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    color: Colors.white,
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(16),
+                    child: AspectRatio(
+                      aspectRatio: 1 / 1,
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/nhrtalk');
+                        },
+                        child: Image.asset(
+                          'assets/app-icon.png',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
-              ),
+                Text(
+                  '커리어톡',
+                  style: TextStyle(fontSize: 12),
+                ),
+              ],
             ),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: Colors.white,
-              ),
-              child: AspectRatio(
-                aspectRatio: 1 / 1,
-                child: InkWell(
-                  onTap: () {
-                    Navigator.pushNamed(context, '/test');
-                  },
-                  child: Center(child: Text("테스트")),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              spacing: 4,
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    color: Colors.white,
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(16),
+                    child: AspectRatio(
+                      aspectRatio: 1 / 1,
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/test');
+                        },
+                        child: Image.asset(
+                          'assets/app-icon.png',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
-              ),
+                Text(
+                  '테스트',
+                  style: TextStyle(fontSize: 12),
+                ),
+              ],
             ),
           ],
         ),
