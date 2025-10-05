@@ -9,7 +9,7 @@ class KkaebizCharacter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 44),
+      padding: EdgeInsets.only(top: 22),
       child: Center(
         child: Container(
           width: 125,
