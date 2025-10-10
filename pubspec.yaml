@@ -68,6 +68,7 @@ flutter:
     - assets/mydoc/
     - assets/kkaebiz/
     - assets/bungeoppang/
+    - assets/nhr/
     - assets/.env
 
   # An image asset can refer to one or more resolution-specific "variants", see
