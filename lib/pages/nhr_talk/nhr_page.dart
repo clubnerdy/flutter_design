@@ -8,6 +8,7 @@ class NhrPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: NhrBody(),
+      backgroundColor: Color(0xFFFFFFFF),
     );
   }
 }
