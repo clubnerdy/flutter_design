@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_design/pages/bungeoppang/bungeoppang_page.dart';
+import 'package:flutter_design/pages/daangn/daangn_page.dart';
 import 'package:flutter_design/pages/dummy/dummy_page.dart';
 import 'package:flutter_design/pages/kkaebiz/kkaebiz_page.dart';
 import 'package:flutter_design/pages/my_doctor/my_doctor_page.dart';
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         '/kkaebiz': (context) => const KkaebizPage(),
         '/bungeo': (context) => const BungeoppangPage(),
         '/nhrtalk': (context) => const NhrPage(),
+        '/daangn': (context) => const DaangnPage(),
         '/test': (context) => const DummyPage(),
       },
       debugShowCheckedModeBanner: false,
@@ -60,7 +62,7 @@ class NaviPage extends StatelessWidget {
                           Navigator.pushNamed(context, '/myDoctor');
                         },
                         child: Image.asset(
-                          'assets/app-icon.png',
+                          'assets/mydoc/app-icon.png',
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -92,7 +94,7 @@ class NaviPage extends StatelessWidget {
                           Navigator.pushNamed(context, '/kkaebiz');
                         },
                         child: Image.asset(
-                          'assets/app-icon.png',
+                          'assets/kkaebiz/app-icon.png',
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -124,7 +126,7 @@ class NaviPage extends StatelessWidget {
                           Navigator.pushNamed(context, '/bungeo');
                         },
                         child: Image.asset(
-                          'assets/app-icon.png',
+                          'assets/bungeoppang/app-icon.png',
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -156,7 +158,7 @@ class NaviPage extends StatelessWidget {
                           Navigator.pushNamed(context, '/nhrtalk');
                         },
                         child: Image.asset(
-                          'assets/app-icon.png',
+                          'assets/nhr/app-icon.png',
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -165,6 +167,38 @@ class NaviPage extends StatelessWidget {
                 ),
                 Text(
                   '커리어톡',
+                  style: TextStyle(fontSize: 12),
+                ),
+              ],
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              spacing: 4,
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    color: Colors.white,
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(16),
+                    child: AspectRatio(
+                      aspectRatio: 1 / 1,
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/daangn');
+                        },
+                        child: Image.asset(
+                          'assets/daangn/app-icon.png',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Text(
+                  '당근마켓',
                   style: TextStyle(fontSize: 12),
                 ),
               ],
