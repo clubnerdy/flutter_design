@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_design/pages/bungeoppang/bungeoppang_page.dart';
-import 'package:flutter_design/pages/daangn/daangn_page.dart';
 import 'package:flutter_design/pages/dummy/dummy_page.dart';
+import 'package:flutter_design/pages/k_bank/k_bank_page.dart';
 import 'package:flutter_design/pages/kkaebiz/kkaebiz_page.dart';
 import 'package:flutter_design/pages/my_doctor/my_doctor_page.dart';
 import 'package:flutter_design/pages/nhr_talk/nhr_page.dart';
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         '/kkaebiz': (context) => const KkaebizPage(),
         '/bungeo': (context) => const BungeoppangPage(),
         '/nhrtalk': (context) => const NhrPage(),
-        '/daangn': (context) => const DaangnPage(),
+        '/kBank': (context) => const KBankPage(),
         '/test': (context) => const DummyPage(),
       },
       debugShowCheckedModeBanner: false,
@@ -193,10 +193,10 @@ class NaviPage extends StatelessWidget {
                       aspectRatio: 1 / 1,
                       child: InkWell(
                         onTap: () {
-                          Navigator.pushNamed(context, '/daangn');
+                          Navigator.pushNamed(context, '/kBank');
                         },
                         child: Image.asset(
-                          'assets/daangn/app-icon.png',
+                          'assets/kbank/app-icon.png',
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -204,7 +204,7 @@ class NaviPage extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  '당근마켓',
+                  '케이뱅크',
                   style: TextStyle(fontSize: 12),
                 ),
               ],
