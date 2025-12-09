@@ -8,10 +8,11 @@ import 'package:flutter_design/pages/nhr_talk/nhr_page.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:kakao_map_plugin/kakao_map_plugin.dart';
 
-void main() {
-  // WidgetsFlutterBinding.ensureInitialized();
-  // final kakaoKey = dotenv.env['KAKAO_NATIVE_APP_KEY'] ?? '';
-  // AuthRepository.initialize(appKey: kakaoKey);
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: '.env');
+  final kakaoKey = dotenv.env['KAKAO_JS_KEY'] ?? '';
+  AuthRepository.initialize(appKey: kakaoKey);
   runApp(const MyApp());
 }
 

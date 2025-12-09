@@ -15,29 +15,18 @@ class _DummyPageState extends State<DummyPage> {
   @override
   void initState() {
     super.initState();
-    print('🔥 DummyPage initState');
     _initFuture = _initKakao();
   }
 
   Future<void> _initKakao() async {
-    print('🔥 initKakao start');
-
     try {
       await dotenv.load(fileName: '.env');
-
-      print('🔥 env loaded, keys = ${dotenv.env.keys}');
-
       final kakaoKey = dotenv.env['KAKAO_JS_KEY'];
-      print('🔥 KAKAO_JS_KEY = $kakaoKey');
-
       if (kakaoKey == null || kakaoKey.isEmpty) {
         throw Exception('KAKAO_JS_KEY가 .env에 없거나 비어 있음');
       }
-
       AuthRepository.initialize(appKey: kakaoKey);
-      print('🔥 AuthRepository.initialize OK');
     } catch (e, s) {
-      print('💥 Kakao init error: $e\n$s');
       rethrow;
     }
   }
