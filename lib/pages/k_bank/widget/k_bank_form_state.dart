@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class KBankFormState extends StatelessWidget {
-  final int checkText;
-  final int amount;
+  final String checkText;
+  final String amount;
   final bool isInput;
 
   const KBankFormState({
@@ -16,18 +16,20 @@ class KBankFormState extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text(
-          '${checkText}원',
-          style: TextStyle(
-            color: Color(0xFF222222),
-            fontWeight: FontWeight.w600,
+        if (!isInput)
+          Text(
+            '${checkText}원',
+            style: TextStyle(
+              color: Color(0xFF222222),
+              fontWeight: FontWeight.w600,
+            ),
           ),
-        ),
-        VerticalDivider(
-          width: 10,
-          thickness: 2,
-          color: Color(0xFF8795B0),
-        ),
+        if (!isInput)
+          const VerticalDivider(
+            width: 10,
+            thickness: 2,
+            color: Color(0xFF8795B0),
+          ),
         Row(
           spacing: 4,
           children: [
