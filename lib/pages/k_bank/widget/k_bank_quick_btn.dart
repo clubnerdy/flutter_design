@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 
 class KBankQuickBtn extends StatelessWidget {
   final int num;
+  final VoidCallback onTap;
 
   const KBankQuickBtn({
     super.key,
     required this.num,
+    required this.onTap,
   });
 
   @override
@@ -13,7 +15,7 @@ class KBankQuickBtn extends StatelessWidget {
     return Expanded(
       child: SizedBox(
         child: TextButton(
-          onPressed: () {},
+          onPressed: onTap,
           child: Text(
             '+${num}만',
             style: const TextStyle(

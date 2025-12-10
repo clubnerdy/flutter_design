@@ -1,26 +1,38 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class KBankKeypad extends StatelessWidget {
-  final int num;
+  final String label;
+  final bool isBackspace;
+  final void Function(String) onTap;
 
   const KBankKeypad({
     super.key,
-    required this.num,
+    required this.label,
+    this.isBackspace = false,
+    required this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: SizedBox(
+        height: 56,
         child: TextButton(
-          onPressed: () {},
-          child: Text(
-            '${num}',
-            style: const TextStyle(
-              fontSize: 28,
-              fontWeight: FontWeight.w400,
-            ),
-          ),
+          onPressed: () => onTap(label),
+          child: isBackspace
+              ? SvgPicture.asset(
+                  'assets/kbank/arrow-left.svg',
+                  width: 30,
+                  height: 30,
+                )
+              : Text(
+                  label,
+                  style: const TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
           style: TextButton.styleFrom(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12),
