@@ -1,12 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_design/pages/bungeoppang/bungeoppang_page.dart';
 import 'package:flutter_design/pages/dummy/dummy_page.dart';
+import 'package:flutter_design/pages/k_bank/k_bank_page.dart';
 import 'package:flutter_design/pages/kkaebiz/kkaebiz_page.dart';
 import 'package:flutter_design/pages/my_doctor/my_doctor_page.dart';
 import 'package:flutter_design/pages/nhr_talk/nhr_page.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:kakao_map_plugin/kakao_map_plugin.dart';
 
-void main() {
-  runApp(const MyApp());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: '.env');
+  final kakaoKey = dotenv.env['KAKAO_JS_KEY'] ?? '';
+  AuthRepository.initialize(appKey: kakaoKey);
+  runApp(
+    const ProviderScope(
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -20,6 +32,7 @@ class MyApp extends StatelessWidget {
         '/kkaebiz': (context) => const KkaebizPage(),
         '/bungeo': (context) => const BungeoppangPage(),
         '/nhrtalk': (context) => const NhrPage(),
+        '/kBank': (context) => const KBankPage(),
         '/test': (context) => const DummyPage(),
       },
       debugShowCheckedModeBanner: false,
@@ -60,7 +73,7 @@ class NaviPage extends StatelessWidget {
                           Navigator.pushNamed(context, '/myDoctor');
                         },
                         child: Image.asset(
-                          'assets/app-icon.png',
+                          'assets/mydoc/app-icon.png',
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -92,7 +105,7 @@ class NaviPage extends StatelessWidget {
                           Navigator.pushNamed(context, '/kkaebiz');
                         },
                         child: Image.asset(
-                          'assets/app-icon.png',
+                          'assets/kkaebiz/app-icon.png',
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -124,7 +137,7 @@ class NaviPage extends StatelessWidget {
                           Navigator.pushNamed(context, '/bungeo');
                         },
                         child: Image.asset(
-                          'assets/app-icon.png',
+                          'assets/bungeoppang/app-icon.png',
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -156,7 +169,7 @@ class NaviPage extends StatelessWidget {
                           Navigator.pushNamed(context, '/nhrtalk');
                         },
                         child: Image.asset(
-                          'assets/app-icon.png',
+                          'assets/nhr/app-icon.png',
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -165,6 +178,38 @@ class NaviPage extends StatelessWidget {
                 ),
                 Text(
                   '커리어톡',
+                  style: TextStyle(fontSize: 12),
+                ),
+              ],
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              spacing: 4,
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    color: Colors.white,
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(16),
+                    child: AspectRatio(
+                      aspectRatio: 1 / 1,
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/kBank');
+                        },
+                        child: Image.asset(
+                          'assets/kbank/app-icon.png',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Text(
+                  '케이뱅크',
                   style: TextStyle(fontSize: 12),
                 ),
               ],
