@@ -30,12 +30,13 @@
 
 > 아래 GIF/스크린샷은 개발 과정 스냅샷입니다. 고해상도 이미지는 `/docs/screenshots` 참고.
 
-| 페이지 | 미리보기 |
-|---|---|
-| 나만의 닥터 – 메인화면 | ![doctor](docs/screenshots/doctor_main.gif) |
-| 깨비즈 – 알람 생성 | ![kkaebiz](docs/screenshots/kkaebiz_alarm.png) |
-| 가슴 속 삼천원 – 지도 | ![map](docs/screenshots/map_page.png) |
-| 커리어톡 – 메인화면 | ![career](docs/screenshots/career_main.gif) |
+| 페이지           | 미리보기                                           |
+|---------------|------------------------------------------------|
+| 나만의 닥터 – 메인화면 | ![doctor](docs/screenshots/doctor_main.gif)    |
+| 깨비즈 – 알람 생성   | ![kkaebiz](docs/screenshots/kkaebiz_alarm.png) |
+| 가슴 속 삼천원 – 지도 | ![map](docs/screenshots/map_page.png)          |
+| 커리어톡 – 메인화면   | ![career](docs/screenshots/career_main.gif)    |
+| 케이뱅크 – 송금화면   | ![kbank](docs/screenshots/career_main.gif)     |
 
 ###
 
@@ -47,6 +48,7 @@
 - [2. 깨비즈 알람생성화면](lib/pages/kkaebiz/kkaebiz_page.dart)
 - [3. 가슴 속 삼천원 지도화면](lib/pages/bungeoppang/bungeoppang_page.dart)
 - [4. 커리어톡 메인화면](lib/pages/nhr_talk/nhr_page.dart)
+- [5. 케이뱅크 송금화면](lib/pages/k_bank/k_bank_page.dart)
 
 > 각 페이지는 독립적으로 돌아가도록 구성되어 **샘플/테스트**에 최적화되어 있습니다.
 
@@ -59,13 +61,15 @@ lib/
 ├─ my_doctor/
 ├─ kkaebiz/
 ├─ bungeoppang/
-└─ nhr_talk/
+├─ nhr_talk/
+└─ k_bank/
 
 assets/
 ├─ mydoc/
 ├─ kkaebiz/
 ├─ bungeoppang/
-└─ nhr/
+├─ nhr/
+└─ kbank/
 
 docs/
 └─ screenshots/ # README에 쓰는 이미지/GIF
