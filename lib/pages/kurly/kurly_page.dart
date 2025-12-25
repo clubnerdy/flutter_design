@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_design/pages/kurly/widget/kurly_detail_top.dart';
 import 'package:flutter_design/pages/kurly/widget/kurly_salt_container.dart';
 
 class KurlyPage extends StatelessWidget {
@@ -23,8 +24,65 @@ class KurlyPage extends StatelessWidget {
                   color: Color(0xFFFFFFFF),
                   borderRadius: BorderRadius.circular(16),
                 ),
+                padding: EdgeInsets.all(16),
                 child: Column(
-                  children: [Text('data')],
+                  spacing: 12,
+                  children: [
+                    kurlyDetailTop(),
+                    Divider(
+                      thickness: 1,
+                      color: Color(0xFFCDCDCD),
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      spacing: 16,
+                      children: [
+                        Text(
+                          '취소완료',
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w500,
+                            color: Color(0xFF666666),
+                          ),
+                        ),
+                        Column(
+                          children: [
+                            Row(
+                              spacing: 14,
+                              children: [
+                                ClipRRect(
+                                  // TODO: 이미지 위젯으로 변경
+                                  child: Container(
+                                    width: 68,
+                                    height: 86,
+                                    decoration: BoxDecoration(
+                                      color: Color(0xFFEEEEEE),
+                                      borderRadius: BorderRadius.circular(12),
+                                    ),
+                                  ),
+                                ),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('샛별배송'),
+                                    Text('상품명'),
+                                    Text('상품명'),
+                                    Row(
+                                      children: [
+                                        Text('data'),
+                                        Text('data'),
+                                        Text('data'),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
             ),
