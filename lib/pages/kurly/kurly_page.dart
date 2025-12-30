@@ -32,7 +32,7 @@ class KurlyPage extends StatelessWidget {
                     kurlyDetailTop(),
                     Divider(
                       thickness: 1,
-                      color: Color(0xFFCDCDCD),
+                      color: Color(0xFFEEEEEE),
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,9 +41,9 @@ class KurlyPage extends StatelessWidget {
                         Text(
                           '취소완료',
                           style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 18,
                             fontWeight: FontWeight.w500,
-                            color: Color(0xFF393939),
+                            color: Color(0xFF666666),
                           ),
                         ),
                         Column(
@@ -90,8 +90,30 @@ class KurlyPage extends StatelessWidget {
                                         color: Color(0xFFA9B2BB),
                                       ),
                                     ),
-                                    Image.asset('assets/icon-arrow-down-gray.png'),
+                                    Image.asset('assets/kurly/icon-arrow-down-gray.png'),
                                   ],
+                                ),
+                              ),
+                            ),
+                            TextButton(
+                              onPressed: () {},
+                              style: TextButton.styleFrom(
+                                backgroundColor: Color(0xFFECEFF3),
+                                foregroundColor: Color(0xFF333333),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadiusGeometry.circular(12),
+                                ),
+                                padding: EdgeInsetsGeometry.symmetric(vertical: 14),
+                              ),
+                              child: Container(
+                                width: double.infinity,
+                                alignment: Alignment.center,
+                                child: Text(
+                                  '취소내역보기',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600,
+                                  ),
                                 ),
                               ),
                             ),

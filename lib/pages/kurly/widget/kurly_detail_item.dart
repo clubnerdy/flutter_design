@@ -47,7 +47,7 @@ class KurlyDetailItem extends StatelessWidget {
                 Text(
                   '${label}',
                   style: TextStyle(
-                    fontSize: 14,
+                    fontSize: 13,
                     fontWeight: FontWeight.w500,
                     color: Color(0xFFAEAEAE),
                   ),
@@ -55,7 +55,7 @@ class KurlyDetailItem extends StatelessWidget {
                 Text(
                   '${itemName}',
                   style: TextStyle(
-                    fontSize: 14,
+                    fontSize: 13,
                     fontWeight: FontWeight.w500,
                     color: Color(0xFF333333),
                   ),
@@ -63,7 +63,7 @@ class KurlyDetailItem extends StatelessWidget {
                 Text(
                   '${description}',
                   style: TextStyle(
-                    fontSize: 14,
+                    fontSize: 13,
                     fontWeight: FontWeight.w500,
                     color: Color(0xFFAEAEAE),
                   ),
@@ -76,7 +76,7 @@ class KurlyDetailItem extends StatelessWidget {
                     Text(
                       '${curruntPrice}원',
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 18,
                         fontWeight: FontWeight.w600,
                         color: Color(0xFF222222),
                       ),
