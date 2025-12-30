@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_design/pages/kurly/widget/kurly_detail_item.dart';
 import 'package:flutter_design/pages/kurly/widget/kurly_detail_top.dart';
 import 'package:flutter_design/pages/kurly/widget/kurly_salt_container.dart';
 
@@ -47,107 +48,14 @@ class KurlyPage extends StatelessWidget {
                         ),
                         Column(
                           children: [
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              spacing: 14,
-                              children: [
-                                ClipRRect(
-                                  // TODO: 이미지 위젯으로 변경
-                                  child: Container(
-                                    width: 64,
-                                    height: 82,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xFFEEEEEE),
-                                      borderRadius: BorderRadius.circular(12),
-                                    ),
-                                  ),
-                                ),
-                                Expanded(
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    spacing: 4,
-                                    children: [
-                                      Text(
-                                        '샛별배송',
-                                        style: TextStyle(
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w500,
-                                          color: Color(0xFFAEAEAE),
-                                        ),
-                                      ),
-                                      Text(
-                                        '[KF365] 호박고구마 800g/봉',
-                                        style: TextStyle(
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w500,
-                                          color: Color(0xFF333333),
-                                        ),
-                                      ),
-                                      Text(
-                                        '[KF365] 호박고구마 800g (25년 햇)',
-                                        style: TextStyle(
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w500,
-                                          color: Color(0xFFAEAEAE),
-                                        ),
-                                      ),
-                                      Row(
-                                        spacing: 6,
-                                        children: [
-                                          Text(
-                                            '5,990원',
-                                            style: TextStyle(
-                                              fontSize: 20,
-                                              fontWeight: FontWeight.w600,
-                                              color: Color(0xFF222222),
-                                            ),
-                                          ),
-                                          Text(
-                                            '7,690원',
-                                            style: TextStyle(
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.w400,
-                                              color: Color(0xFFC3C3C3),
-                                              decoration: TextDecoration.lineThrough,
-                                              decorationColor: Color(0xFFC3C3C3),
-                                            ),
-                                          ),
-                                          SizedBox(
-                                            height: 14,
-                                            child: VerticalDivider(
-                                              width: 2,
-                                              thickness: 1,
-                                              color: Color(0xFFEFEFEF),
-                                            ),
-                                          ),
-                                          Text(
-                                            '1개',
-                                            style: TextStyle(
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.w500,
-                                              color: Color(0xFF222222),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                InkWell(
-                                  onTap: () {},
-                                  child: Container(
-                                    width: 40,
-                                    height: 40,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(4),
-                                      border: Border.all(width: 1, color: Color(0xFFCECECE)),
-                                    ),
-                                    child: Image.asset(
-                                      'assets/kurly/icon-cart-samll.png',
-                                    ),
-                                  ),
-                                ),
-                              ],
+                            KurlyDetailItem(
+                              imageUrl: '',
+                              label: '샛별배송',
+                              itemName: '[KF365] 호박고구마 800g/봉',
+                              description: '[KF365] 호박고구마 800g (25년 햇)',
+                              curruntPrice: '5,990',
+                              price: '7,690',
+                              count: 1,
                             ),
                           ],
                         ),
