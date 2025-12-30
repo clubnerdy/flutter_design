@@ -4,7 +4,7 @@ class KurlyDetailItem extends StatelessWidget {
   final String? label;
   final String itemName;
   final String? description;
-  final String curruntPrice;
+  final String currentPrice;
   final String? price;
   final int count;
   final String imageUrl;
@@ -14,7 +14,7 @@ class KurlyDetailItem extends StatelessWidget {
     this.label,
     required this.itemName,
     this.description,
-    required this.curruntPrice,
+    required this.currentPrice,
     this.price,
     required this.count,
     required this.imageUrl,
@@ -28,6 +28,7 @@ class KurlyDetailItem extends StatelessWidget {
         spacing: 14,
         children: [
           ClipRRect(
+            borderRadius: BorderRadiusGeometry.circular(12),
             // TODO: 이미지 위젯으로 변경
             child: Container(
               width: 64,
@@ -36,7 +37,7 @@ class KurlyDetailItem extends StatelessWidget {
                 color: Color(0xFFEEEEEE),
                 borderRadius: BorderRadius.circular(12),
               ),
-              child: Image.asset('${imageUrl}'),
+              child: Image.asset('assets/kurly/${imageUrl}'),
             ),
           ),
           Expanded(
@@ -44,14 +45,15 @@ class KurlyDetailItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               spacing: 4,
               children: [
-                Text(
-                  '${label}',
-                  style: TextStyle(
-                    fontSize: 13,
-                    fontWeight: FontWeight.w500,
-                    color: Color(0xFFAEAEAE),
+                if (label != null)
+                  Text(
+                    label!,
+                    style: TextStyle(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w500,
+                      color: Color(0xFFAEAEAE),
+                    ),
                   ),
-                ),
                 Text(
                   '${itemName}',
                   style: TextStyle(
@@ -59,38 +61,42 @@ class KurlyDetailItem extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                     color: Color(0xFF333333),
                   ),
-                ),
-                Text(
-                  '${description}',
-                  style: TextStyle(
-                    fontSize: 13,
-                    fontWeight: FontWeight.w500,
-                    color: Color(0xFFAEAEAE),
-                  ),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
+                if (description != null)
+                  Text(
+                    description!,
+                    style: TextStyle(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w500,
+                      color: Color(0xFFAEAEAE),
+                    ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 Row(
                   spacing: 6,
                   children: [
                     Text(
-                      '${curruntPrice}원',
+                      '${currentPrice}원',
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w600,
                         color: Color(0xFF222222),
                       ),
                     ),
-                    Text(
-                      '${price}원',
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        color: Color(0xFFC3C3C3),
-                        decoration: TextDecoration.lineThrough,
-                        decorationColor: Color(0xFFC3C3C3),
+                    if (price != null)
+                      Text(
+                        '${price!}원',
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                          color: Color(0xFFC3C3C3),
+                          decoration: TextDecoration.lineThrough,
+                          decorationColor: Color(0xFFC3C3C3),
+                        ),
                       ),
-                    ),
                     SizedBox(
                       height: 14,
                       child: VerticalDivider(
