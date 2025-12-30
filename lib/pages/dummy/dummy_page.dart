@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:kakao_map_plugin/kakao_map_plugin.dart';
 
 class DummyPage extends StatefulWidget {
   const DummyPage({super.key});
@@ -10,52 +8,45 @@ class DummyPage extends StatefulWidget {
 }
 
 class _DummyPageState extends State<DummyPage> {
-  late Future<void> _initFuture;
-
-  @override
-  void initState() {
-    super.initState();
-    _initFuture = _initKakao();
-  }
-
-  Future<void> _initKakao() async {
-    try {
-      await dotenv.load(fileName: '.env');
-      final kakaoKey = dotenv.env['KAKAO_JS_KEY'];
-      if (kakaoKey == null || kakaoKey.isEmpty) {
-        throw Exception('KAKAO_JS_KEY가 .env에 없거나 비어 있음');
-      }
-      AuthRepository.initialize(appKey: kakaoKey);
-    } catch (e, s) {
-      rethrow;
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
-    print('🔥 DummyPage build');
+    String? selectedValue;
+    final List<String> items = ['일주일', '1개월', '3개월', '6개월', '1년'];
+
     return Scaffold(
-      appBar: AppBar(title: const Text('카카오맵 테스트')),
-      body: FutureBuilder<void>(
-        future: _initFuture,
-        builder: (context, snapshot) {
-          if (snapshot.connectionState != ConnectionState.done) {
-            return const Center(child: CircularProgressIndicator());
-          }
-
-          if (snapshot.hasError) {
-            return Center(
-              child: Text(
-                '초기화 실패:\n${snapshot.error}',
-                textAlign: TextAlign.center,
-              ),
+      appBar: AppBar(
+        title: Text('커스텀 드롭다운 메뉴 테스트'),
+      ),
+      body: Center(
+        child: PopupMenuButton<String>(
+          offset: Offset(0, 40),
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.grey[300]!),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              spacing: 4,
+              children: [
+                Text(selectedValue ?? '기간선택'),
+                Icon(Icons.keyboard_arrow_down, size: 20),
+              ],
+            ),
+          ),
+          itemBuilder: (context) => items.map((item) {
+            return PopupMenuItem(
+              value: item,
+              child: Text(item),
             );
-          }
-
-          return KakaoMap(
-            center: LatLng(35.1796, 129.0756),
-          );
-        },
+          }).toList(),
+          onSelected: (value) {
+            setState(() {
+              selectedValue = value;
+            });
+          },
+        ),
       ),
     );
   }

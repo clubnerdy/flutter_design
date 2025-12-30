@@ -74,6 +74,7 @@ flutter:
     - assets/nhr/
     - assets/daangn/
     - assets/kbank/
+    - assets/kurly/
     - .env
 
   # An image asset can refer to one or more resolution-specific "variants", see
