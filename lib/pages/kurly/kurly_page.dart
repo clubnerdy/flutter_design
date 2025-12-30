@@ -47,6 +47,7 @@ class KurlyPage extends StatelessWidget {
                           ),
                         ),
                         Column(
+                          spacing: 16,
                           children: [
                             KurlyDetailItem(
                               imageUrl: '',
@@ -56,6 +57,43 @@ class KurlyPage extends StatelessWidget {
                               curruntPrice: '5,990',
                               price: '7,690',
                               count: 1,
+                            ),
+                            KurlyDetailItem(
+                              imageUrl: '',
+                              label: '샛별배송',
+                              itemName: '[KF365] 호박고구마 800g/봉',
+                              description: '[KF365] 호박고구마 800g (25년 햇)',
+                              curruntPrice: '5,990',
+                              price: '7,690',
+                              count: 1,
+                            ),
+                            KurlyDetailItem(
+                              imageUrl: '',
+                              label: '샛별배송',
+                              itemName: '[KF365] 호박고구마 800g/봉',
+                              description: '[KF365] 호박고구마 800g (25년 햇)',
+                              curruntPrice: '5,990',
+                              price: '7,690',
+                              count: 1,
+                            ),
+                            InkWell(
+                              child: Container(
+                                width: double.infinity,
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      '총 4건 주문 펼쳐보기',
+                                      style: TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w600,
+                                        color: Color(0xFFA9B2BB),
+                                      ),
+                                    ),
+                                    Image.asset('assets/icon-arrow-down-gray.png'),
+                                  ],
+                                ),
+                              ),
                             ),
                           ],
                         ),
