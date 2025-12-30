@@ -42,39 +42,110 @@ class KurlyPage extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.w500,
-                            color: Color(0xFF666666),
+                            color: Color(0xFF393939),
                           ),
                         ),
                         Column(
                           children: [
                             Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               spacing: 14,
                               children: [
                                 ClipRRect(
                                   // TODO: 이미지 위젯으로 변경
                                   child: Container(
-                                    width: 68,
-                                    height: 86,
+                                    width: 64,
+                                    height: 82,
                                     decoration: BoxDecoration(
                                       color: Color(0xFFEEEEEE),
                                       borderRadius: BorderRadius.circular(12),
                                     ),
                                   ),
                                 ),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text('샛별배송'),
-                                    Text('상품명'),
-                                    Text('상품명'),
-                                    Row(
-                                      children: [
-                                        Text('data'),
-                                        Text('data'),
-                                        Text('data'),
-                                      ],
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    spacing: 4,
+                                    children: [
+                                      Text(
+                                        '샛별배송',
+                                        style: TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w500,
+                                          color: Color(0xFFAEAEAE),
+                                        ),
+                                      ),
+                                      Text(
+                                        '[KF365] 호박고구마 800g/봉',
+                                        style: TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w500,
+                                          color: Color(0xFF333333),
+                                        ),
+                                      ),
+                                      Text(
+                                        '[KF365] 호박고구마 800g (25년 햇)',
+                                        style: TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w500,
+                                          color: Color(0xFFAEAEAE),
+                                        ),
+                                      ),
+                                      Row(
+                                        spacing: 6,
+                                        children: [
+                                          Text(
+                                            '5,990원',
+                                            style: TextStyle(
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.w600,
+                                              color: Color(0xFF222222),
+                                            ),
+                                          ),
+                                          Text(
+                                            '7,690원',
+                                            style: TextStyle(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w400,
+                                              color: Color(0xFFC3C3C3),
+                                              decoration: TextDecoration.lineThrough,
+                                              decorationColor: Color(0xFFC3C3C3),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            height: 14,
+                                            child: VerticalDivider(
+                                              width: 2,
+                                              thickness: 1,
+                                              color: Color(0xFFEFEFEF),
+                                            ),
+                                          ),
+                                          Text(
+                                            '1개',
+                                            style: TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w500,
+                                              color: Color(0xFF222222),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                InkWell(
+                                  onTap: () {},
+                                  child: Container(
+                                    width: 40,
+                                    height: 40,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(4),
+                                      border: Border.all(width: 1, color: Color(0xFFCECECE)),
                                     ),
-                                  ],
+                                    child: Image.asset(
+                                      'assets/kurly/icon-cart-samll.png',
+                                    ),
+                                  ),
                                 ),
                               ],
                             ),
@@ -141,7 +212,7 @@ class KurlyPage extends StatelessWidget {
               backgroundColor: Color(0xFF222222),
               padding: EdgeInsets.all(0),
               offset: Offset(4, -8),
-              child: Image.asset('assets/kurly/icon-kart.png'),
+              child: Image.asset('assets/kurly/icon-cart.png'),
             ),
           ),
         ),
