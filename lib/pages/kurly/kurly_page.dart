@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_design/pages/kurly/widget/kurly_order_item.dart';
 import 'package:flutter_design/pages/kurly/widget/kurly_salt_container.dart';
 
 class KurlyPage extends StatelessWidget {
@@ -18,14 +19,13 @@ class KurlyPage extends StatelessWidget {
               width: double.infinity,
               color: Color(0xFFF2F5F8),
               padding: EdgeInsets.all(16),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Color(0xFFFFFFFF),
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                child: Column(
-                  children: [Text('data')],
-                ),
+              child: Column(
+                spacing: 12,
+                children: [
+                  KurlyOrderItem(),
+                  KurlyOrderItem(),
+                  KurlyOrderItem(),
+                ],
               ),
             ),
           ],
@@ -37,6 +37,7 @@ class KurlyPage extends StatelessWidget {
   AppBar _appbar(BuildContext context) {
     return AppBar(
       backgroundColor: Color(0xFFFFFFFF),
+      scrolledUnderElevation: 0,
       leading: IconButton(
         onPressed: () {
           Navigator.pop(context);
@@ -83,7 +84,7 @@ class KurlyPage extends StatelessWidget {
               backgroundColor: Color(0xFF222222),
               padding: EdgeInsets.all(0),
               offset: Offset(4, -8),
-              child: Image.asset('assets/kurly/icon-kart.png'),
+              child: Image.asset('assets/kurly/icon-cart.png'),
             ),
           ),
         ),
