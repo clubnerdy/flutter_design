@@ -1,53 +1,123 @@
 import 'package:flutter/material.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 class DummyPage extends StatefulWidget {
-  const DummyPage({super.key});
+  const DummyPage({Key? key}) : super(key: key);
 
   @override
   State<DummyPage> createState() => _DummyPageState();
 }
 
 class _DummyPageState extends State<DummyPage> {
+  final List<CarouselItem> items = [
+    CarouselItem(
+      imageUrl: 'dummy-box.png',
+      title: '타이틀 1',
+      description: '설명 1',
+    ),
+    CarouselItem(
+      imageUrl: 'dummy-box.png',
+      title: '타이틀 2',
+      description: '설명 2',
+    ),
+    CarouselItem(
+      imageUrl: 'dummy-box.png',
+      title: '타이틀 3',
+      description: '설명 3',
+    ),
+    CarouselItem(
+      imageUrl: 'dummy-box.png',
+      title: '타이틀 4',
+      description: '설명 4',
+    ),
+    CarouselItem(
+      imageUrl: 'dummy-box.png',
+      title: '타이틀 5',
+      description: '설명 5',
+    ),
+    CarouselItem(
+      imageUrl: 'dummy-box.png',
+      title: '타이틀 6',
+      description: '설명 6',
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
-    String? selectedValue;
-    final List<String> items = ['일주일', '1개월', '3개월', '6개월', '1년'];
-
     return Scaffold(
       appBar: AppBar(
-        title: Text('커스텀 드롭다운 메뉴 테스트'),
+        title: const Text('캐러셀 테스트 페이지'),
       ),
       body: Center(
-        child: PopupMenuButton<String>(
-          offset: Offset(0, 40),
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.grey[300]!),
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              spacing: 4,
-              children: [
-                Text(selectedValue ?? '기간선택'),
-                Icon(Icons.keyboard_arrow_down, size: 20),
-              ],
-            ),
-          ),
-          itemBuilder: (context) => items.map((item) {
-            return PopupMenuItem(
-              value: item,
-              child: Text(item),
-            );
-          }).toList(),
-          onSelected: (value) {
-            setState(() {
-              selectedValue = value;
-            });
+        child: CarouselSlider.builder(
+          itemCount: items.length,
+          itemBuilder: (context, index, realIndex) {
+            return _buildCarouselCard(items[index]);
           },
+          options: CarouselOptions(
+            height: 200,
+            viewportFraction: 0.5,
+            initialPage: 0,
+            enableInfiniteScroll: true,
+            //enlargeCenterPage: true,
+          ),
         ),
       ),
     );
   }
+
+  Widget _buildCarouselCard(CarouselItem item) {
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 6),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          // 이미지
+          ClipRRect(
+            borderRadius: const BorderRadius.vertical(top: Radius.circular(12)),
+            child: Image.asset(
+              'assets/${item.imageUrl}',
+              width: double.infinity,
+              height: 20,
+              fit: BoxFit.cover,
+            ),
+          ),
+          const SizedBox(height: 8),
+          // 텍스트 영역 1
+          Text(
+            item.title,
+            style: const TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: 4),
+          // 텍스트 영역 2
+          Text(
+            item.description,
+            style: const TextStyle(
+              fontSize: 12,
+              color: Colors.grey,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class CarouselItem {
+  final String imageUrl;
+  final String title;
+  final String description;
+
+  CarouselItem({
+    required this.imageUrl,
+    required this.title,
+    required this.description,
+  });
 }
