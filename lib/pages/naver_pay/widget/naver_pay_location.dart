@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_design/pages/naver_pay/widget/naver_pay_location_item.dart';
+import 'package:flutter_design/pages/naver_pay/widget/naver_pay_location_list.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class NaverPayLocation extends StatelessWidget {
@@ -12,7 +12,7 @@ class NaverPayLocation extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
-        spacing: 12,
+        spacing: 16,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -71,27 +71,35 @@ class NaverPayLocation extends StatelessWidget {
               ),
             ],
           ),
-          Column(
-            children: [
-              NaverPayLocationItem(
-                imageName: 'image-onjeom.png',
-                title: '온점 을지로점',
-                distance: 233,
-                countReview: '1,235',
+          NaverPayLocationList(),
+          InkWell(
+            onTap: () => print('지도로보기 버튼 클릭됨'),
+            child: Container(
+              width: double.infinity,
+              height: 60,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                color: Color(0xFF22282C),
               ),
-              NaverPayLocationItem(
-                imageName: 'image-dunkin.png',
-                title: '던킨 시청역점',
-                distance: 261,
-                countReview: '10,994',
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                spacing: 6,
+                children: [
+                  Text(
+                    '지도로 보기',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      color: Color(0xFFFFFFFF),
+                    ),
+                  ),
+                  FaIcon(
+                    FontAwesomeIcons.angleRight,
+                    size: 13,
+                    color: Color(0xFFFFFFFF),
+                  ),
+                ],
               ),
-              NaverPayLocationItem(
-                imageName: 'image-paper.png',
-                title: '페이퍼마쉐',
-                distance: 329,
-                countReview: '5,885',
-              ),
-            ],
+            ),
           ),
         ],
       ),
