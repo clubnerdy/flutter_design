@@ -13,46 +13,32 @@ class NaverPayEvent extends StatefulWidget {
 class _NaverPayEventState extends State<NaverPayEvent> {
   final List<CarouselItem> items = [
     CarouselItem(
-      imageUrl: 'dummy-box.png',
+      imageUrl: 'logo-card.png',
       title: '모바일 교통카드',
       description: '최대 14%',
       backgroundColorCode: AppColors.green,
+      fillColor: FillColors.fillGreen,
     ),
     CarouselItem(
-      imageUrl: 'dummy-box.png',
+      imageUrl: 'logo-npay.png',
       title: 'CU NPay카드',
       description: '20%+20% 혜택',
       backgroundColorCode: AppColors.purple,
+      fillColor: FillColors.fillPurple,
     ),
     CarouselItem(
-      imageUrl: 'dummy-box.png',
-      title: '모바일 더블혜택',
-      description: '최대10%',
-      backgroundColorCode: AppColors.green,
-    ),
-    CarouselItem(
-      imageUrl: 'dummy-box.png',
+      imageUrl: 'logo-card.png',
       title: '모바일 교통카드',
       description: '최대 14%',
       backgroundColorCode: AppColors.green,
+      fillColor: FillColors.fillGreen,
     ),
     CarouselItem(
-      imageUrl: 'dummy-box.png',
-      title: 'CU NPay카드',
-      description: '20%+20% 혜택',
-      backgroundColorCode: AppColors.purple,
-    ),
-    CarouselItem(
-      imageUrl: 'dummy-box.png',
-      title: '모바일 더블혜택',
-      description: '최대10%',
-      backgroundColorCode: AppColors.green,
-    ),
-    CarouselItem(
-      imageUrl: 'dummy-box.png',
+      imageUrl: 'logo-cu.png',
       title: '모바일 더블혜택',
       description: '최대10%',
       backgroundColorCode: AppColors.purple,
+      fillColor: FillColors.fillPurple,
     ),
   ];
 
@@ -119,11 +105,19 @@ class _NaverPayEventState extends State<NaverPayEvent> {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.vertical(top: Radius.circular(12)),
-            child: Image.asset(
-              'assets/${item.imageUrl}',
+            child: Container(
               width: 80,
               height: 80,
-              fit: BoxFit.cover,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(40),
+                color: item.fillColor,
+              ),
+              child: Image.asset(
+                'assets/naverpay/${item.imageUrl}',
+                width: 80,
+                height: 80,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           SizedBox(height: 32),
@@ -154,16 +148,23 @@ class CarouselItem {
   final String title;
   final String description;
   final Color backgroundColorCode;
+  final Color fillColor;
 
   CarouselItem({
     required this.imageUrl,
     required this.title,
     required this.description,
     required this.backgroundColorCode,
+    required this.fillColor,
   });
 }
 
 class AppColors {
   static const green = Color(0xFF00BF5C);
   static const purple = Color(0xFF612399);
+}
+
+class FillColors {
+  static const fillGreen = Color(0xFF00AD52);
+  static const fillPurple = Color(0xFF4F1880);
 }
