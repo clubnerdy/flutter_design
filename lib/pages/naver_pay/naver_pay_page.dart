@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_design/pages/naver_pay/widget/naver_pay_app_bar.dart';
 import 'package:flutter_design/pages/naver_pay/widget/naver_pay_card.dart';
 import 'package:flutter_design/pages/naver_pay/widget/naver_pay_event.dart';
+import 'package:flutter_design/pages/naver_pay/widget/naver_pay_location.dart';
 import 'package:flutter_design/pages/naver_pay/widget/naver_pay_persistent_header.dart';
 
 class NaverPayPage extends StatelessWidget {
@@ -20,6 +21,7 @@ class NaverPayPage extends StatelessWidget {
               children: [
                 NaverPayCard(),
                 NaverPayEvent(),
+                NaverPayLocation(),
                 Container(
                   width: double.infinity,
                   height: 600,
