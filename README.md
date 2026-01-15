@@ -38,6 +38,7 @@
 | 커리어톡 – 메인화면   | ![career](docs/screenshots/career_main.gif)    |
 | 케이뱅크 – 송금화면   | ![kbank](docs/screenshots/career_main.gif)     |
 | 마켓컬리 – 주문내역   | ![kurly](docs/screenshots/career_main.gif)     |
+| 네이버페이 – 메인화면  | ![kurly](docs/screenshots/career_main.gif)     |
 
 ###
 
@@ -51,6 +52,7 @@
 - [4. 커리어톡 메인화면](lib/pages/nhr_talk/nhr_page.dart)
 - [5. 케이뱅크 송금화면](lib/pages/k_bank/k_bank_page.dart)
 - [6. 마켓컬리 주문내역](lib/pages/kurly/kurly_page.dart)
+- [7. 네이버페이 메인화면](lib/pages/naver_pay/naver_pay_page.dart)
 
 > 각 페이지는 독립적으로 돌아가도록 구성되어 **샘플/테스트**에 최적화되어 있습니다.
 
@@ -65,7 +67,8 @@ lib/
 ├─ bungeoppang/
 ├─ nhr_talk/
 ├─ k_bank/
-└─ kurly/
+├─ kurly/
+└─ naver_pay/
 
 assets/
 ├─ mydoc/
@@ -73,7 +76,8 @@ assets/
 ├─ bungeoppang/
 ├─ nhr/
 ├─ kbank/
-└─ kurly/
+├─ kurly/
+└─ naverpay/
 
 docs/
 └─ screenshots/ # README에 쓰는 이미지/GIF
