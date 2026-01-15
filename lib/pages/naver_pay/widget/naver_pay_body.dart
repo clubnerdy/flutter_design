@@ -27,6 +27,7 @@ class NaverPayBody extends StatelessWidget {
               NaverPayLocation(),
               NaverPayPiont(),
               NaverPayOrder(),
+              SizedBox(height: 70 + MediaQuery.of(context).padding.bottom),
             ],
           ),
         ),

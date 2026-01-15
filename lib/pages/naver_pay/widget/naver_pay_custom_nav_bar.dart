@@ -1,62 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
-class DummyPage extends StatefulWidget {
-  const DummyPage({super.key});
-
-  @override
-  State<DummyPage> createState() => _DummyPageState();
-}
-
-class _DummyPageState extends State<DummyPage> {
-  @override
-  Widget build(BuildContext context) {
-    int _currentIndex = 2; // 중앙 버튼 선택 상태
-
-    final List<Widget> _pages = [
-      Center(child: Text('자산·송금', style: TextStyle(fontSize: 24))),
-      Center(child: Text('혜택', style: TextStyle(fontSize: 24))),
-      Center(child: Text('홈', style: TextStyle(fontSize: 24))),
-      Center(child: Text('증권', style: TextStyle(fontSize: 24))),
-      Center(child: Text('부동산', style: TextStyle(fontSize: 24))),
-    ];
-
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('커스텀 바텀 네비게이션 테스트'),
-      ),
-      body: Stack(
-        children: [
-          Placeholder(
-            child: Container(
-              color: Color(0xFF000000),
-            ),
-          ),
-          Positioned(
-            left: 0,
-            right: 0,
-            bottom: 0,
-            child: CustomBottomNavWithFAB(
-              currentIndex: _currentIndex,
-              onTap: (index) {
-                setState(() {
-                  _currentIndex = index;
-                });
-              },
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class CustomBottomNavWithFAB extends StatelessWidget {
-  final int currentIndex;
-  final Function(int) onTap;
-
-  const CustomBottomNavWithFAB({
-    required this.currentIndex,
-    required this.onTap,
+class NaverPayCustomNavBar extends StatelessWidget {
+  const NaverPayCustomNavBar({
+    super.key,
   });
 
   @override
@@ -64,22 +11,17 @@ class CustomBottomNavWithFAB extends StatelessWidget {
     final bottomPadding = MediaQuery.of(context).padding.bottom;
 
     return SizedBox(
-      height: 70 + bottomPadding,
+      height: 70 + MediaQuery.of(context).padding.bottom,
       child: Stack(
-        clipBehavior: Clip.none, // 중요: FAB이 위로 튀어나올 수 있도록
+        clipBehavior: Clip.none,
         children: [
-          // 커스텀 곡선 배경
+          // 노치 곡선 커스텀 영역
           Positioned(
-            left: 0,
-            right: 0,
-            bottom: 0,
             child: CustomPaint(
               size: Size(MediaQuery.of(context).size.width, 70 + bottomPadding),
               painter: BottomNavPainter(bottomPadding: bottomPadding),
             ),
           ),
-
-          // 네비게이션 아이템들
           Positioned(
             left: 0,
             right: 0,
@@ -89,45 +31,45 @@ class CustomBottomNavWithFAB extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  _buildNavItem(0, Icons.account_balance_wallet_outlined, '자산·송금'),
-                  _buildNavItem(1, Icons.card_giftcard_outlined, '혜택'),
-                  SizedBox(width: 60), // 중앙 FAB 공간
-                  _buildNavItem(3, Icons.show_chart, '증권'),
-                  _buildNavItem(4, Icons.home_outlined, '부동산'),
+                  _buildNavItem(0, 'icon-money', '자산·송금'),
+                  _buildNavItem(1, 'icon-gift', '혜택'),
+                  SizedBox(width: 60),
+                  _buildNavItem(3, 'icon-chart', '증권'),
+                  _buildNavItem(4, 'icon-home', '부동산'),
                 ],
               ),
             ),
           ),
-
-          // 커스텀 FAB - 원하는 위치에 정확히 배치
           Positioned(
-            left: MediaQuery.of(context).size.width / 2 - 34, // 중앙 정렬
-            bottom: 70 + bottomPadding - 52, // 위로 튀어나오는 정도 조절 (숫자 변경 가능)
+            left: MediaQuery.of(context).size.width / 2 - 34,
+            bottom: 70 + bottomPadding - 52,
             child: Container(
               width: 68,
               height: 68,
+              padding: EdgeInsets.all(6),
               decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(34),
                 gradient: LinearGradient(
                   colors: [Color(0xFFFFFFFF), Color(0xFFF3EFF1)],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                 ),
-                borderRadius: BorderRadius.circular(34),
               ),
-              padding: EdgeInsets.all(6),
               child: GestureDetector(
-                onTap: () => onTap(2),
+                onTap: () {},
                 child: Container(
                   width: 56,
                   height: 56,
+                  alignment: Alignment.center,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: Color(0xFF00D85B),
                   ),
-                  child: Icon(
-                    Icons.circle_outlined,
-                    color: Colors.black,
-                    size: 32,
+                  child: SvgPicture.asset(
+                    'assets/naverpay/icon-scan.svg',
+                    width: 32,
+                    fit: BoxFit.contain,
+                    colorFilter: ColorFilter.mode(Color(0xFF464A4C), BlendMode.srcIn),
                   ),
                 ),
               ),
@@ -138,10 +80,10 @@ class CustomBottomNavWithFAB extends StatelessWidget {
     );
   }
 
-  Widget _buildNavItem(int index, IconData icon, String label) {
-    final isSelected = currentIndex == index;
+  // 네비게이션 아이템
+  Widget _buildNavItem(int index, String imageUrl, String label) {
     return GestureDetector(
-      onTap: () => onTap(index),
+      onTap: () {},
       behavior: HitTestBehavior.opaque,
       child: Container(
         width: 70,
@@ -149,18 +91,18 @@ class CustomBottomNavWithFAB extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(
-              icon,
-              color: isSelected ? Colors.black : Colors.grey[600],
-              size: 28,
+            SvgPicture.asset(
+              'assets/naverpay/${imageUrl}.svg',
+              width: 30,
+              colorFilter: ColorFilter.mode(Color(0xFF464A4C), BlendMode.srcIn),
             ),
             SizedBox(height: 4),
             Text(
               label,
               style: TextStyle(
-                color: isSelected ? Colors.black : Colors.grey[600],
+                color: Colors.grey[600],
                 fontSize: 11,
-                fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
+                fontWeight: FontWeight.normal,
               ),
               textAlign: TextAlign.center,
             ),
@@ -171,7 +113,6 @@ class CustomBottomNavWithFAB extends StatelessWidget {
   }
 }
 
-// 곡선 배경을 그리는 CustomPainter
 class BottomNavPainter extends CustomPainter {
   final double bottomPadding;
 
