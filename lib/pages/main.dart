@@ -7,6 +7,7 @@ import 'package:flutter_design/pages/kurly/kurly_page.dart';
 import 'package:flutter_design/pages/my_doctor/my_doctor_page.dart';
 import 'package:flutter_design/pages/naver_pay/naver_pay_page.dart';
 import 'package:flutter_design/pages/nhr_talk/nhr_page.dart';
+import 'package:flutter_design/pages/olyoung/olyoung_page.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kakao_map_plugin/kakao_map_plugin.dart';
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
         '/kBank': (context) => const KBankPage(),
         '/kurly': (context) => const KurlyPage(),
         '/naverPay': (context) => const NaverPayPage(),
+        '/olyoung': (context) => const OlyoungPage(),
         '/test': (context) => const DummyPage(),
       },
       debugShowCheckedModeBanner: false,
@@ -278,6 +280,38 @@ class NaviPage extends StatelessWidget {
                 ),
                 Text(
                   '네이버페이',
+                  style: TextStyle(fontSize: 12),
+                ),
+              ],
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              spacing: 4,
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    color: Colors.white,
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(16),
+                    child: AspectRatio(
+                      aspectRatio: 1 / 1,
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/olyoung');
+                        },
+                        child: Image.asset(
+                          'assets/olyoung/app-icon.png',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Text(
+                  '올리브영',
                   style: TextStyle(fontSize: 12),
                 ),
               ],
