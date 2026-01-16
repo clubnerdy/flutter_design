@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_design/pages/olyoung/widget/olyoung_checkbox.dart';
 
 class DummyPage extends StatefulWidget {
   const DummyPage({super.key});
@@ -8,7 +9,8 @@ class DummyPage extends StatefulWidget {
 }
 
 class _DummyPageState extends State<DummyPage> {
-  bool isChecked = false;
+  bool saleChecked = false;
+  bool giveChecked = false;
 
   @override
   Widget build(BuildContext context) {
@@ -22,61 +24,23 @@ class _DummyPageState extends State<DummyPage> {
         child: Center(
           child: Row(
             children: [
-              Row(
-                children: [
-                  Checkbox(
-                    value: isChecked,
-                    onChanged: (bool? value) {
-                      setState(() {
-                        isChecked = value!;
-                      });
-                    },
-                    activeColor: Color(0xFF000000),
-                    checkColor: Color(0xFFFFFFFF),
-                    side: BorderSide(width: 1, color: Color(0xFFB3B8BE)),
-                    materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                    visualDensity: VisualDensity(
-                      vertical: VisualDensity.minimumDensity,
-                      horizontal: VisualDensity.minimumDensity,
-                    ),
-                  ),
-                  Text(
-                    '세일',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400,
-                      color: Color(0xFF131518),
-                    ),
-                  ),
-                ],
+              OlyoungCheckbox(
+                label: '세일',
+                value: saleChecked,
+                onChanged: (value) {
+                  setState(() {
+                    saleChecked = value;
+                  });
+                },
               ),
-              Row(
-                children: [
-                  Checkbox(
-                    value: isChecked,
-                    onChanged: (bool? value) {
-                      setState(() {
-                        isChecked = value!;
-                      });
-                    },
-                    activeColor: Color(0xFF000000),
-                    checkColor: Color(0xFFFFFFFF),
-                    side: BorderSide(width: 1, color: Color(0xFFB3B8BE)),
-                    materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                    visualDensity: VisualDensity(
-                      vertical: VisualDensity.minimumDensity,
-                      horizontal: VisualDensity.minimumDensity,
-                    ),
-                  ),
-                  Text(
-                    '세일',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400,
-                      color: Color(0xFF131518),
-                    ),
-                  ),
-                ],
+              OlyoungCheckbox(
+                label: '증정',
+                value: giveChecked,
+                onChanged: (value) {
+                  setState(() {
+                    giveChecked = value;
+                  });
+                },
               ),
             ],
           ),

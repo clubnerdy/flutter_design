@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_design/pages/olyoung/widget/olyoung_check_area.dart';
 
 class OlyoungPersistentHeader extends StatefulWidget {
   const OlyoungPersistentHeader({
@@ -42,6 +43,7 @@ class _OlyoungPersistentHeaderState extends State<OlyoungPersistentHeader>
           child: Column(
             children: [
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     '전체상품',
@@ -51,7 +53,11 @@ class _OlyoungPersistentHeaderState extends State<OlyoungPersistentHeader>
                       color: Color(0xFF131518),
                     ),
                   ),
+                  OlyoungCheckArea(),
                 ],
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
               ),
             ],
           ),
@@ -115,19 +121,4 @@ class _CustomDelegate extends SliverPersistentHeaderDelegate {
   bool shouldRebuild(covariant _CustomDelegate oldDelegate) {
     return false;
   }
-}
-
-// 토글 체크박스 모델
-class CheckboxModal {
-  String title;
-  bool value;
-  String time;
-  String perpose;
-
-  CheckboxModal({
-    required this.title,
-    this.value = false,
-    required this.time,
-    required this.perpose,
-  });
 }
