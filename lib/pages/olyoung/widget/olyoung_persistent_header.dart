@@ -13,6 +13,8 @@ class OlyoungPersistentHeader extends StatefulWidget {
 class _OlyoungPersistentHeaderState extends State<OlyoungPersistentHeader>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
+  int selectedIndex = 0;
+  final List<String> tabs = ['멤버십', '청첩결제', '쿠폰', '적립금', '포인트', '이벤트'];
 
   @override
   void initState() {
@@ -30,12 +32,13 @@ class _OlyoungPersistentHeaderState extends State<OlyoungPersistentHeader>
   Widget build(BuildContext context) {
     return SliverPersistentHeader(
       delegate: _CustomDelegate(
-        maxHeight: 90,
-        minHeight: 90,
+        maxHeight: 80,
+        minHeight: 80,
+        topPadding: MediaQuery.of(context).padding.top,
         child: Container(
           width: double.infinity,
-          height: 90,
-          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 22),
+          height: 80,
+          padding: EdgeInsets.fromLTRB(16, MediaQuery.of(context).padding.top + 8, 16, 0),
           decoration: BoxDecoration(
             color: Color(0xFFFFFFFF),
             border: Border.all(color: Color(0xFF000000), width: 1),
@@ -58,38 +61,41 @@ class _OlyoungPersistentHeaderState extends State<OlyoungPersistentHeader>
               ),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: List.generate(tabs.length, (index) {
+                    final isSelected = selectedIndex == index;
+                    return GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          selectedIndex = index;
+                        });
+                      },
+                      child: Container(
+                        margin: EdgeInsets.only(right: 8),
+                        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                        decoration: BoxDecoration(
+                          color: isSelected ? Color(0xFF242830) : Colors.transparent,
+                          borderRadius: BorderRadius.circular(32),
+                        ),
+                        child: Text(
+                          tabs[index],
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600,
+                            color: isSelected ? Colors.white : Color(0xFF98989D),
+                          ),
+                        ),
+                      ),
+                    );
+                  }),
+                ),
               ),
             ],
           ),
-          // Container(
-          //   padding: EdgeInsets.all(6),
-          //   decoration: BoxDecoration(
-          //     color: Color(0xFF000004),
-          //     borderRadius: BorderRadiusGeometry.circular(32),
-          //   ),
-          //   child: TabBar(
-          //     controller: _tabController,
-          //     indicator: BoxDecoration(
-          //       color: Color(0xFF242830),
-          //       borderRadius: BorderRadius.circular(32),
-          //     ),
-          //     labelColor: Colors.white,
-          //     unselectedLabelColor: Color(0xFF98989D),
-          //     indicatorSize: TabBarIndicatorSize.tab,
-          //     dividerColor: Colors.transparent,
-          //     tabs: [
-          //       Tab(text: '멤버십'),
-          //       Tab(text: '현장결제'),
-          //       Tab(text: '쿠폰'),
-          //     ],
-          //     labelStyle: TextStyle(
-          //       fontSize: 14,
-          //       fontWeight: FontWeight.w600,
-          //     ),
-          //   ),
-          // ),
         ),
       ),
+      floating: true,
+      pinned: true,
     );
   }
 }
@@ -99,11 +105,13 @@ class _CustomDelegate extends SliverPersistentHeaderDelegate {
   final double maxHeight;
   final double minHeight;
   final Widget child;
+  final double topPadding;
 
   _CustomDelegate({
     required this.maxHeight,
     required this.minHeight,
     required this.child,
+    required this.topPadding,
   });
 
   @override
@@ -112,10 +120,10 @@ class _CustomDelegate extends SliverPersistentHeaderDelegate {
   }
 
   @override
-  double get maxExtent => maxHeight;
+  double get maxExtent => maxHeight + topPadding;
 
   @override
-  double get minExtent => minHeight;
+  double get minExtent => minHeight + topPadding;
 
   @override
   bool shouldRebuild(covariant _CustomDelegate oldDelegate) {
