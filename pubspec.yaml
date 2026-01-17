@@ -78,6 +78,7 @@ flutter:
     - assets/kurly/
     - assets/naverpay/
     - assets/olyoung/
+    - assets/calai/
     - .env
 
   # An image asset can refer to one or more resolution-specific "variants", see
