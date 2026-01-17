@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_design/pages/olyoung/widget/olyoung_checkbox.dart';
 
 class DummyPage extends StatefulWidget {
   const DummyPage({super.key});
@@ -8,233 +9,43 @@ class DummyPage extends StatefulWidget {
 }
 
 class _DummyPageState extends State<DummyPage> {
+  bool saleChecked = false;
+  bool giveChecked = false;
+
   @override
   Widget build(BuildContext context) {
-    int _currentIndex = 2; // 중앙 버튼 선택 상태
-
-    final List<Widget> _pages = [
-      Center(child: Text('자산·송금', style: TextStyle(fontSize: 24))),
-      Center(child: Text('혜택', style: TextStyle(fontSize: 24))),
-      Center(child: Text('홈', style: TextStyle(fontSize: 24))),
-      Center(child: Text('증권', style: TextStyle(fontSize: 24))),
-      Center(child: Text('부동산', style: TextStyle(fontSize: 24))),
-    ];
-
     return Scaffold(
       appBar: AppBar(
-        title: Text('커스텀 바텀 네비게이션 테스트'),
+        title: Text('토글 체크박스 테스트'),
       ),
-      body: Stack(
-        children: [
-          Placeholder(
-            child: Container(
-              color: Color(0xFF000000),
-            ),
-          ),
-          Positioned(
-            left: 0,
-            right: 0,
-            bottom: 0,
-            child: CustomBottomNavWithFAB(
-              currentIndex: _currentIndex,
-              onTap: (index) {
-                setState(() {
-                  _currentIndex = index;
-                });
-              },
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class CustomBottomNavWithFAB extends StatelessWidget {
-  final int currentIndex;
-  final Function(int) onTap;
-
-  const CustomBottomNavWithFAB({
-    required this.currentIndex,
-    required this.onTap,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    final bottomPadding = MediaQuery.of(context).padding.bottom;
-
-    return SizedBox(
-      height: 70 + bottomPadding,
-      child: Stack(
-        clipBehavior: Clip.none, // 중요: FAB이 위로 튀어나올 수 있도록
-        children: [
-          // 커스텀 곡선 배경
-          Positioned(
-            left: 0,
-            right: 0,
-            bottom: 0,
-            child: CustomPaint(
-              size: Size(MediaQuery.of(context).size.width, 70 + bottomPadding),
-              painter: BottomNavPainter(bottomPadding: bottomPadding),
-            ),
-          ),
-
-          // 네비게이션 아이템들
-          Positioned(
-            left: 0,
-            right: 0,
-            bottom: bottomPadding,
-            child: SizedBox(
-              height: 70,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  _buildNavItem(0, Icons.account_balance_wallet_outlined, '자산·송금'),
-                  _buildNavItem(1, Icons.card_giftcard_outlined, '혜택'),
-                  SizedBox(width: 60), // 중앙 FAB 공간
-                  _buildNavItem(3, Icons.show_chart, '증권'),
-                  _buildNavItem(4, Icons.home_outlined, '부동산'),
-                ],
+      body: Container(
+        width: double.infinity,
+        height: MediaQuery.of(context).size.height,
+        child: Center(
+          child: Row(
+            children: [
+              OlyoungCheckbox(
+                label: '세일',
+                value: saleChecked,
+                onChanged: (value) {
+                  setState(() {
+                    saleChecked = value;
+                  });
+                },
               ),
-            ),
+              OlyoungCheckbox(
+                label: '증정',
+                value: giveChecked,
+                onChanged: (value) {
+                  setState(() {
+                    giveChecked = value;
+                  });
+                },
+              ),
+            ],
           ),
-
-          // 커스텀 FAB - 원하는 위치에 정확히 배치
-          Positioned(
-            left: MediaQuery.of(context).size.width / 2 - 34, // 중앙 정렬
-            bottom: 70 + bottomPadding - 52, // 위로 튀어나오는 정도 조절 (숫자 변경 가능)
-            child: Container(
-              width: 68,
-              height: 68,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [Color(0xFFFFFFFF), Color(0xFFF3EFF1)],
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                ),
-                borderRadius: BorderRadius.circular(34),
-              ),
-              padding: EdgeInsets.all(6),
-              child: GestureDetector(
-                onTap: () => onTap(2),
-                child: Container(
-                  width: 56,
-                  height: 56,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Color(0xFF00D85B),
-                  ),
-                  child: Icon(
-                    Icons.circle_outlined,
-                    color: Colors.black,
-                    size: 32,
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildNavItem(int index, IconData icon, String label) {
-    final isSelected = currentIndex == index;
-    return GestureDetector(
-      onTap: () => onTap(index),
-      behavior: HitTestBehavior.opaque,
-      child: Container(
-        width: 70,
-        padding: EdgeInsets.only(top: 8),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(
-              icon,
-              color: isSelected ? Colors.black : Colors.grey[600],
-              size: 28,
-            ),
-            SizedBox(height: 4),
-            Text(
-              label,
-              style: TextStyle(
-                color: isSelected ? Colors.black : Colors.grey[600],
-                fontSize: 11,
-                fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
-              ),
-              textAlign: TextAlign.center,
-            ),
-          ],
         ),
       ),
     );
   }
-}
-
-// 곡선 배경을 그리는 CustomPainter
-class BottomNavPainter extends CustomPainter {
-  final double bottomPadding;
-
-  BottomNavPainter({required this.bottomPadding});
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint()
-      ..color = Colors.white
-      ..style = PaintingStyle.fill;
-
-    final path = Path();
-    final navHeight = size.height - bottomPadding;
-
-    // 시작점 (왼쪽 상단)
-    path.moveTo(0, 0);
-
-    // 왼쪽에서 중앙 노치까지
-    path.lineTo(size.width * 0.35, 0);
-
-    // 노치 시작 - 왼쪽 곡선
-    path.quadraticBezierTo(
-      size.width * 0.40,
-      0,
-      size.width * 0.42,
-      -3,
-    );
-
-    // 노치 중앙 - 원형 곡선 (FAB을 감싸는 부분)
-    path.quadraticBezierTo(
-      size.width * 0.46,
-      -16,
-      size.width * 0.50,
-      -16,
-    );
-
-    // 노치 오른쪽
-    path.quadraticBezierTo(
-      size.width * 0.54,
-      -16,
-      size.width * 0.58,
-      -3,
-    );
-
-    // 노치 끝 - 오른쪽 곡선
-    path.quadraticBezierTo(
-      size.width * 0.60,
-      0,
-      size.width * 0.65,
-      0,
-    );
-
-    // 오른쪽 끝까지
-    path.lineTo(size.width, 0);
-    path.lineTo(size.width, size.height);
-    path.lineTo(0, size.height);
-    path.close();
-
-    // 그림자 효과
-    canvas.drawShadow(path, Colors.black26, 8, false);
-    canvas.drawPath(path, paint);
-  }
-
-  @override
-  bool shouldRepaint(BottomNavPainter oldDelegate) => oldDelegate.bottomPadding != bottomPadding;
 }
