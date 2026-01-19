@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_design/pages/bungeoppang/bungeoppang_page.dart';
+import 'package:flutter_design/pages/cal_ai/cal_ai_page.dart';
 import 'package:flutter_design/pages/dummy/dummy_page.dart';
 import 'package:flutter_design/pages/k_bank/k_bank_page.dart';
 import 'package:flutter_design/pages/kkaebiz/kkaebiz_page.dart';
@@ -39,6 +40,7 @@ class MyApp extends StatelessWidget {
         '/kurly': (context) => const KurlyPage(),
         '/naverPay': (context) => const NaverPayPage(),
         '/olyoung': (context) => const OlyoungPage(),
+        '/calai': (context) => const CalAiPage(),
         '/test': (context) => const DummyPage(),
       },
       debugShowCheckedModeBanner: false,
@@ -312,6 +314,38 @@ class NaviPage extends StatelessWidget {
                 ),
                 Text(
                   '올리브영',
+                  style: TextStyle(fontSize: 12),
+                ),
+              ],
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              spacing: 4,
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    color: Colors.white,
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(16),
+                    child: AspectRatio(
+                      aspectRatio: 1 / 1,
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/calai');
+                        },
+                        child: Image.asset(
+                          'assets/calai/app-icon.png',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Text(
+                  'Cal AI',
                   style: TextStyle(fontSize: 12),
                 ),
               ],
