@@ -1,6 +1,5 @@
-import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_design/pages/cal_ai/widget/cal_ai_chart_model.dart';
+import 'package:flutter_design/pages/cal_ai/widget/cal_ai_day.dart';
 
 class CalAiWeek extends StatelessWidget {
   const CalAiWeek({
@@ -10,135 +9,43 @@ class CalAiWeek extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 8),
+      padding: EdgeInsets.symmetric(horizontal: 4),
       child: Row(
-        spacing: 2,
         children: [
-          Expanded(
-            child: Container(
-              height: 84,
-              decoration: BoxDecoration(
-                color: Color(0xFFFFFFFF),
-                borderRadius: BorderRadius.circular(16),
-                boxShadow: [
-                  BoxShadow(
-                    color: Color(0x1A818181),
-                    blurRadius: 10.0,
-                    spreadRadius: 1,
-                    offset: Offset(0, 2),
-                  ),
-                ],
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Text('Sun'),
-                  // CalAiChartModel(),
-                ],
-              ),
-            ),
+          CalAiDay(
+            weekDay: 'Sun',
+            date: 7,
+            value: 0,
           ),
-          Expanded(
-            child: Container(
-              height: 84,
-              decoration: BoxDecoration(
-                color: Color(0xFFFFFFFF),
-                borderRadius: BorderRadius.circular(16),
-                boxShadow: [
-                  BoxShadow(
-                    color: Color(0x1A818181),
-                    blurRadius: 10.0,
-                    spreadRadius: 1,
-                    offset: Offset(0, 2),
-                  ),
-                ],
-              ),
-            ),
+          CalAiDay(
+            weekDay: 'Mon',
+            date: 8,
+            value: 0,
           ),
-          Expanded(
-            child: Container(
-              height: 84,
-              decoration: BoxDecoration(
-                color: Color(0xFFFFFFFF),
-                borderRadius: BorderRadius.circular(16),
-                boxShadow: [
-                  BoxShadow(
-                    color: Color(0x1A818181),
-                    blurRadius: 10.0,
-                    spreadRadius: 1,
-                    offset: Offset(0, 2),
-                  ),
-                ],
-              ),
-            ),
+          CalAiDay(
+            weekDay: 'Tue',
+            date: 9,
+            value: 0,
           ),
-          Expanded(
-            child: Container(
-              height: 84,
-              decoration: BoxDecoration(
-                color: Color(0xFFFFFFFF),
-                borderRadius: BorderRadius.circular(16),
-                boxShadow: [
-                  BoxShadow(
-                    color: Color(0x1A818181),
-                    blurRadius: 10.0,
-                    spreadRadius: 1,
-                    offset: Offset(0, 2),
-                  ),
-                ],
-              ),
-            ),
+          CalAiDay(
+            weekDay: 'Wed',
+            date: 10,
+            value: 0,
           ),
-          Expanded(
-            child: Container(
-              height: 84,
-              decoration: BoxDecoration(
-                color: Color(0xFFFFFFFF),
-                borderRadius: BorderRadius.circular(16),
-                boxShadow: [
-                  BoxShadow(
-                    color: Color(0x1A818181),
-                    blurRadius: 10.0,
-                    spreadRadius: 1,
-                    offset: Offset(0, 2),
-                  ),
-                ],
-              ),
-            ),
+          CalAiDay(
+            weekDay: 'Thu',
+            date: 11,
+            value: 100,
           ),
-          Expanded(
-            child: Container(
-              height: 84,
-              decoration: BoxDecoration(
-                color: Color(0xFFFFFFFF),
-                borderRadius: BorderRadius.circular(16),
-                boxShadow: [
-                  BoxShadow(
-                    color: Color(0x1A818181),
-                    blurRadius: 10.0,
-                    spreadRadius: 1,
-                    offset: Offset(0, 2),
-                  ),
-                ],
-              ),
-            ),
+          CalAiDay(
+            weekDay: 'Fri',
+            date: 12,
+            value: 70,
+            isToday: true,
           ),
-          Expanded(
-            child: Container(
-              height: 84,
-              decoration: BoxDecoration(
-                color: Color(0xFFFFFFFF),
-                borderRadius: BorderRadius.circular(16),
-                boxShadow: [
-                  BoxShadow(
-                    color: Color(0x1A818181),
-                    blurRadius: 10.0,
-                    spreadRadius: 1,
-                    offset: Offset(0, 2),
-                  ),
-                ],
-              ),
-            ),
+          CalAiDay(
+            weekDay: 'Sat',
+            date: 13,
           ),
         ],
       ),
