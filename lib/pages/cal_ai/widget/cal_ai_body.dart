@@ -24,10 +24,8 @@ class CalAiBody extends StatelessWidget {
                 child: Column(
                   children: [
                     CalAiUploadedList(),
-                    // 임시 사이즈 박스
-                    Container(
-                      width: double.infinity,
-                      height: 400,
+                    SizedBox(
+                      height: 32,
                     ),
                   ],
                 ),
