@@ -40,6 +40,7 @@
 | 마켓컬리 – 주문내역    | ![kurly](docs/screenshots/career_main.gif)     |
 | 네이버페이 – 메인화면   | ![kurly](docs/screenshots/career_main.gif)     |
 | 올리브영 – 필터 · 상품 | ![olyoung](docs/screenshots/career_main.gif)   |
+| CalAI – 메인화면   | ![calai](docs/screenshots/career_main.gif)     |
 
 ###
 
@@ -55,6 +56,7 @@
 - [6. 마켓컬리 주문내역](lib/pages/kurly/kurly_page.dart)
 - [7. 네이버페이 메인화면](lib/pages/naver_pay/naver_pay_page.dart)
 - [8. 올리브영 필터 · 상품](lib/pages/olyoung/olyoung_page.dart)
+- [9. CalAI 메인화면](lib/pages/cal_ai/cal_ai_page.dart)
 
 > 각 페이지는 독립적으로 돌아가도록 구성되어 **샘플/테스트**에 최적화되어 있습니다.
 
@@ -71,7 +73,8 @@ lib/
 ├─ k_bank/
 ├─ kurly/
 ├─ naver_pay/
-└─ olyoung/
+├─ olyoung/
+└─ cal_ai/
 
 assets/
 ├─ mydoc/
@@ -81,7 +84,8 @@ assets/
 ├─ kbank/
 ├─ kurly/
 ├─ naverpay/
-└─ olyoung/
+├─ olyoung/
+└─ calai/
 
 docs/
 └─ screenshots/ # README에 쓰는 이미지/GIF
