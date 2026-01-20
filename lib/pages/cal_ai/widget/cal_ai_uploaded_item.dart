@@ -42,7 +42,7 @@ class CalAiUploadedItem extends StatelessWidget {
         children: [
           imageName != null
               ? Image.asset(
-                  'assets/${imageName}.png',
+                  'assets/calai/${imageName}.png',
                   width: 128,
                   height: 150,
                   fit: BoxFit.cover,

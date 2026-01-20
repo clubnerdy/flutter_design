@@ -26,7 +26,7 @@ class CalAiUploadedList extends StatelessWidget {
           children: [
             CalAiAd(),
             CalAiUploadedItem(
-              imageName: 'gray-box',
+              imageName: 'peach',
               title: 'Peach',
               time: '오전 10:59',
               caloriesValue: 38,
@@ -35,7 +35,7 @@ class CalAiUploadedList extends StatelessWidget {
               fatValue: 0,
             ),
             CalAiUploadedItem(
-              imageName: 'gray-box',
+              imageName: 'chips',
               title: 'Sweet Potato Chips',
               time: '오전 10:56',
               caloriesValue: 500,
@@ -44,7 +44,7 @@ class CalAiUploadedList extends StatelessWidget {
               fatValue: 30,
             ),
             CalAiUploadedItem(
-              imageName: 'gray-box',
+              imageName: 'bbq',
               title: 'Korean BBQ',
               time: '오전 10:53',
               caloriesValue: 782,

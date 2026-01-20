@@ -25,7 +25,7 @@ class CalAiAd extends StatelessWidget {
       child: Row(
         children: [
           Image.asset(
-            'assets/gray-box.png',
+            'assets/calai/dujjonku.png',
             width: 128,
             height: 150,
             fit: BoxFit.cover,
