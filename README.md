@@ -30,17 +30,17 @@
 
 > 아래 GIF/스크린샷은 개발 과정 스냅샷입니다. 고해상도 이미지는 `/docs/screenshots` 참고.
 
-| 페이지            | 미리보기                                           |
-|----------------|------------------------------------------------|
-| 나만의 닥터 – 메인화면  | ![doctor](docs/screenshots/doctor_main.gif)    |
-| 깨비즈 – 알람 생성    | ![kkaebiz](docs/screenshots/kkaebiz_alarm.png) |
-| 가슴 속 삼천원 – 지도  | ![map](docs/screenshots/map_page.png)          |
-| 커리어톡 – 메인화면    | ![career](docs/screenshots/career_main.gif)    |
-| 케이뱅크 – 송금화면    | ![kbank](docs/screenshots/career_main.gif)     |
-| 마켓컬리 – 주문내역    | ![kurly](docs/screenshots/career_main.gif)     |
-| 네이버페이 – 메인화면   | ![kurly](docs/screenshots/career_main.gif)     |
-| 올리브영 – 필터 · 상품 | ![olyoung](docs/screenshots/career_main.gif)   |
-| CalAI – 메인화면   | ![calai](docs/screenshots/career_main.gif)     |
+| 페이지            | 미리보기                                                  |
+|----------------|-------------------------------------------------------|
+| 나만의 닥터 – 메인화면  | ![doctor](docs/screenshots/doctor_page.png)           |
+| 깨비즈 – 알람 생성    | ![kkaebiz](docs/screenshots/kkaebiz_page.png)         |
+| 가슴 속 삼천원 – 지도  | ![bungeoppang](docs/screenshots/bungeoppang_page.png) |
+| 커리어톡 – 메인화면    | ![nhr](docs/screenshots/nhr_page.png)                 |
+| 케이뱅크 – 송금화면    | ![kbank](docs/screenshots/kbank_page.png)             |
+| 마켓컬리 – 주문내역    | ![kurly](docs/screenshots/kulry_page.png)             |
+| 네이버페이 – 메인화면   | ![naverpay](docs/screenshots/naverpay_page.png)       |
+| 올리브영 – 필터 · 상품 | ![olyoung](docs/screenshots/olyoung_page.png)         |
+| CalAI – 메인화면   | ![calai](docs/screenshots/calai_page.png)             |
 
 ###
 
