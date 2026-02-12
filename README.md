@@ -98,13 +98,12 @@ docs/
 ```
 bash
 
-flutter pub get
+$ flutter pub get
 
-# (옵션) .env 사용 시
-# 프로젝트 루트에 .env 생성 후 flutter_dotenv로 로드
-# 또는 Android는 local.properties에 MAPS_API_KEY 등으로 관리 권장
+에뮬레이터 실행
+Pixel 3 API Baklava Android 16.0 권장
 
-flutter run
+$ flutter run
 ```
 
 ---
